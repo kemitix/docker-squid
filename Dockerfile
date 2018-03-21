@@ -19,7 +19,7 @@ RUN echo 'APT::Install-Recommends 0;' >> /etc/apt/apt.conf.d/01norecommends \
             apt-transport-https \
  && rm -rf /var/lib/apt/lists/*
 
-RUN mv /etc/squid3/squid.conf /etc/squid3/squid.conf.dist
+RUN mv /etc/squid/squid.conf /etc/squid/squid.conf.dist
 COPY squid.conf /etc/squid3/squid.conf
 COPY entrypoint.sh /sbin/entrypoint.sh
 RUN chmod 755 /sbin/entrypoint.sh
